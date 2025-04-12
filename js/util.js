@@ -17,33 +17,35 @@ export const listarTarefas = (tarefas) => {
 
   listaTarefasContainer.innerHTML = '';
 
-  if (tarefasListadas.length) {
-    tarefasListadas.forEach(({ nome, id, status }) => {
-      const itemTarefa = document.createElement('li');
-      itemTarefa.setAttribute('id', id);
-      itemTarefa.classList.add('tarefa');
-      itemTarefa.setAttribute('data-status', `${status ? 'concluida' : ''}`);
+  if (tarefasListadas) {
+    if (tarefasListadas.length) {
+      tarefasListadas.forEach(({ nome, id, status }) => {
+        const itemTarefa = document.createElement('li');
+        itemTarefa.setAttribute('id', id);
+        itemTarefa.classList.add('tarefa');
+        itemTarefa.setAttribute('data-status', `${status ? 'concluida' : ''}`);
 
-      itemTarefa.innerHTML = `
-        <div class="tarefa-info">
-          <div class="tarefa-checkbox" role="checkbox" aria-label="Marcar tarefa como concluída/pendente"></div>
-          <p>${nome}</p>
-        </div>
-        <div class="funcoes-tarefa">
-          <button class="editar-tarefa-btn" aria-label="Editar tarefa"><i class="fa-solid fa-pencil"></i></button>
-          <button class="modal-excluir-tarefa-btn" aria-label="Excluir tarefa"><i class="fa-solid fa-trash"></i></button>
-        </div>
-      `;
+        itemTarefa.innerHTML = `
+          <div class="tarefa-info">
+            <div class="tarefa-checkbox" role="checkbox" aria-label="Marcar tarefa como concluída/pendente"></div>
+            <p>${nome}</p>
+          </div>
+          <div class="funcoes-tarefa">
+            <button class="editar-tarefa-btn" aria-label="Editar tarefa"><i class="fa-solid fa-pencil"></i></button>
+            <button class="modal-excluir-tarefa-btn" aria-label="Excluir tarefa"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        `;
 
-      listaTarefasContainer.appendChild(itemTarefa);
-    });
-  } else {
-    const msgListaVazia = document.createElement('p');
-    msgListaVazia.classList.add('msg-lista-vazia');
+        listaTarefasContainer.appendChild(itemTarefa);
+      });
+    } else {
+      const msgListaVazia = document.createElement('p');
+      msgListaVazia.classList.add('msg-lista-vazia');
 
-    msgListaVazia.innerHTML = 'Lista Vazia';
+      msgListaVazia.innerHTML = 'Lista Vazia';
 
-    listaTarefasContainer.appendChild(msgListaVazia);
+      listaTarefasContainer.appendChild(msgListaVazia);
+    }
   }
 };
 
