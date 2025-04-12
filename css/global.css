@@ -1,0 +1,38 @@
+:root {
+  --cor1: #22242f;
+  --cor2: #000;
+  --cor3: #3a3f52;
+  --cor4: #b0b6c9;
+  --cor5: #d5d8e2;
+  --cor6: #f6f7f9;
+}
+
+.tema-claro {
+  --cor1: #eaf2ff;
+  --cor3: #b0b6c9;
+  --cor4: #3a3f52;
+  --cor5: #22242f;
+}
+
+.container {
+  background: var(--cor1);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: .5s;
+}
+
+@keyframes showRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

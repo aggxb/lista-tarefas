@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://kit.fontawesome.com/44ab85fce6.js" crossorigin="anonymous"></script>
+  <script src="script.js" type="module" defer></script>
+</head>
+
+<body class="container">
+  <header class="header">
+    <button class="alternar-tema-btn" aria-label="Alternar tema (claro/escuro)">
+      <i class="fa-solid fa-sun"></i>
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <h1>Lista de Tarefas</h1>
+  </header>
+
+  <main>
+    <section class="area-tarefas">
+      <div class="adicionar-tarefa">
+        <form class="adicionar-tarefa-form">
+          <div>
+            <input type="text" placeholder="Insira uma tarefa nova">
+            <span class="msg-erro">Adicione um nome</span>
+          </div>
+          <button type="submit" class="adicionar-tarefa-btn" aria-label="Adicionar nova tarefa"><i class="fa-solid fa-plus"></i></button>
+        </form>
+      </div>
+
+      <ul class="lista-tarefas">
+        <!-- <li class="tarefa" data-status="concluida">
+          <div class="tarefa-info">
+            <div class="tarefa-checkbox" role="checkbox" aria-label="Marcar tarefa como concluída/pendente"></div>
+            <p>Tarefa de Exemplo</p>
+          </div>
+          <div class="funcoes-tarefa">
+            <button class="editar-tarefa-btn" aria-label="Editar tarefa"><i class="fa-solid fa-pencil"></i></button>
+            <button class="modal-excluir-tarefa-btn" aria-label="Excluir tarefa"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+
+    <dialog id="modal" data-modal>
+      <div id="modal-conteudo">
+        <button class="fechar-modal-btn" aria-label="Fechar a janela de exclusão de tarefa"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-conteudo-info">
+          <p>Tem certeza que deseja excluir a tarefa?</p>
+          <button class="confirmar-exclusao-btn" aria-label="Confirmar exclusão de tarefa">Excluir</button>
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <button class="filtro-btn" data-filtro="todas" aria-label="Mostrar todas as tarefas"><i class="fa-solid fa-globe"></i> Todas</button>
+    <button class="filtro-btn" data-filtro="pendentes" aria-label="Mostrar tarefas pendentes"><i class="fa-solid fa-list"></i>Pendentes</button>
+    <button class="filtro-btn" data-filtro="concluidas" aria-label="Mostrar tarefas concluídas"><i class="fa-solid fa-check-double"></i>Concluídas</button>
+  </footer>
+</body>
+
+</html>

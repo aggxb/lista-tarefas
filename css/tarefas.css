@@ -1,0 +1,218 @@
+/* Adicionar tarefas */
+.adicionar-tarefa-form {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.adicionar-tarefa-form div {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.adicionar-tarefa-form div input {
+  height: 50px;
+  padding: .75rem;
+  font-size: 1.25rem;
+  background: var(--cor3);
+  color: var(--cor4);
+  border: 1px solid;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.adicionar-tarefa-form[data-edicao-id] div input {
+  background: var(--cor5);
+  color: var(--cor1);
+  border: 2px solid #E68E2F;
+}
+
+.adicionar-tarefa-form div input:hover {
+  background: var(--cor4);
+  color: var(--cor2);
+}
+
+.adicionar-tarefa-form div input::placeholder {
+  color: var(--cor5);
+  opacity: .3;
+  transition: .5s;
+}
+
+.adicionar-tarefa-form div input:hover::placeholder {
+  color: var(--cor2);
+  opacity: 1;
+}
+
+.adicionar-tarefa-form .msg-erro {
+  display: none;
+}
+
+.adicionar-tarefa-form .msg-erro.ativo {
+  display: block;
+  font-size: .875rem;
+  opacity: .8;
+  color: red;
+}
+
+.adicionar-tarefa-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: var(--cor4);
+  color: var(--cor1);
+  border: 1px solid var(--cor5);
+  border-radius: 50%;
+  transition: .5s;
+}
+
+.adicionar-tarefa-btn:hover {
+  background: var(--cor3);
+  color: var(--cor5);
+  border-color: var(--cor5);
+}
+
+/* Listar tarefas */
+.area-tarefas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lista-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 130%;
+  max-height: calc(6 * (53px + 1rem));
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--cor3);
+  border-radius: 30px;
+  overflow-y: auto;
+  transition: .5s;
+}
+
+.lista-tarefas .msg-lista-vazia {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--cor5);
+  transition: .5s;
+}
+
+.lista-tarefas::-webkit-scrollbar {
+  width: 5px;
+}
+
+.lista-tarefas > .tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: .5s;
+}
+
+.lista-tarefas .tarefa {
+  animation: showRight .7s;
+}
+
+.lista-tarefas .tarefa .tarefa-info {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.lista-tarefas .tarefa .tarefa-info .tarefa-checkbox {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid;
+  border-color: var(--cor4);
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.lista-tarefas .tarefa .tarefa-info .tarefa-checkbox:hover {
+  cursor: pointer;
+  background: var(--cor5);
+  opacity: .2;
+}
+
+.lista-tarefas .tarefa[data-status='concluida'] .tarefa-info .tarefa-checkbox {
+  background: var(--cor4);
+  opacity: .5;
+}
+
+.lista-tarefas .tarefa .tarefa-info p {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  max-width: 100ch;
+  color: var(--cor4);
+  transition: .3s;
+}
+
+.lista-tarefas .tarefa[data-status='concluida'] .tarefa-info p {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.lista-tarefas .tarefa .funcoes-tarefa {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lista-tarefas .tarefa .funcoes-tarefa button {
+  width: 50px;
+  height: 50px;
+  background: var(--cor3);
+  color: var(--cor4);
+  border: 1px solid;
+  border-radius: 50%;
+  transition: .5s;
+}
+
+.lista-tarefas .tarefa .funcoes-tarefa button:hover {
+  background: var(--cor4);
+}
+
+.lista-tarefas .tarefa .funcoes-tarefa button:first-child:hover {
+  color: var(--cor2);
+}
+
+.lista-tarefas .tarefa .funcoes-tarefa button:last-child {
+  color: red;
+  opacity: .8;
+}
+
+@media (max-width: 600px) {
+  .lista-tarefas .tarefa .tarefa-info p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lista-tarefas {
+    min-width: 100%;
+  }
+  .lista-tarefas > .tarefa {
+    gap: 1.25rem;
+  }
+  .lista-tarefas .tarefa .tarefa-info p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .lista-tarefas {
+    max-height: calc(3 * (55px + 1rem));
+  }
+}

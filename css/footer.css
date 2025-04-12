@@ -1,0 +1,57 @@
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer .filtro-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem;
+  font-size: 1.25rem;
+  background: var(--cor3);
+  color: var(--cor4);
+  font-weight: 500;
+  border: .5px solid;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.footer .filtro-btn.ativo,
+.footer .filtro-btn:hover {
+  background: var(--cor4);
+  color: var(--cor1);
+}
+
+.footer .filtro-btn:first-child {
+  border-color: #080B4F;
+}
+
+.footer .filtro-btn:first-child i {
+  color: #080B4F;
+}
+
+.footer .filtro-btn:nth-child(2) {
+  border-color: #E68E2F;
+}
+
+.footer .filtro-btn:nth-child(2) i {
+  color: #E68E2F;
+}
+
+.footer .filtro-btn:last-child {
+  border-color: #3DA71A;
+}
+
+.footer .filtro-btn:last-child i {
+  color: #3DA71A;
+}
+
+@media (max-width: 480px) {
+  .footer .filtro-btn {
+    font-size: 1rem;
+  }
+}
